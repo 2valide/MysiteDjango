@@ -1,0 +1,39 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'movies/css/index.css' %}">
+</head>
+<body>
+    <main>
+        <div class="content-card">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="category"> {{ Titre }}</div>
+                <div class="heading"> {{ Description }}
+                    <div class="author"> By <span class="name">{{ author }}</span> {{ 2027 }}</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="category"> {{ Titre }}</div>
+                <div class="heading"> {{ Description }}
+                    <div class="author"> By <span class="name">{{ author }}</span> {{ 2027 }}</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="category"> {{ Titre }}</div>
+                <div class="heading"> {{ Description }}
+                    <div class="author"> By <span class="name">{{ author }}</span> {{ 2027 }}</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

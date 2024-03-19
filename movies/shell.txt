@@ -1,0 +1,8 @@
+from movies.models import Movies
+
+$ monNouveauFilm = Movies(1, "Avatar", "Lorem Ipsum", 2009, "", "Cameron")
+$ monNouveauFilm.save()
+
+$ Movies.objects.all()
+
+$ python manage.py runserver
