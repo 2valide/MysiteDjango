@@ -1,27 +1,26 @@
 from django.shortcuts import render
+from . import models
 
 # Create your views here.
-def show(request, titre_film):
-    release = 2000 + 3
-    
+def show(request, fID):
+    listMovies = models.Movies.objects.get(filmId=fID)
+    premierFilm = listMovies
+
     return render(request, "movies/show.html", {
-        "titre": titre_film,
-        "release": release,
-        "autor": "Auteur",
-        "user" : {
-            "username": "username",
-            "email": "email",
-        },
+        "titre": premierFilm.titre,
+        "description": premierFilm.description,
+        "autor": premierFilm.autor,
+        "release": premierFilm.release,
+        "nextId": int(fID) + 1,
     })
 
-def index(request , titre_film) :
-    release = 2000 + 3
+    
+
+def index(request) :
+    listeTousFilms = models.Movies.objects.all()
 
     return render(request, "movies/index.html", {
-        "titre" : titre_film,
-        "description" : "description_film",
-        "autor" : "auteur",
-        "release" : "release",
+        "premiersFilms": listeTousFilms,
     })
 
 def login(request) :

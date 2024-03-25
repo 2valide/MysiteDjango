@@ -11,29 +11,18 @@
 </head>
 <body>
     <main>
-        <div class="content-card">
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="category"> {{ Titre }}</div>
-                <div class="heading"> {{ Description }}
-                    <div class="author"> By <span class="name">{{ author }}</span> {{ 2027 }}</div>
+        {% for i in premiersFilms %}
+            <div class="content-card">
+                <div class="card">
+                    <div class="card-image"> <img class="card-image" src="{% static "movies/img/' + i.cover +'.jpg" %}" alt=""/></div>
+                    <div class="category"> {{ i.titre }} </div>
+                    <div class="heading"> {{ description }} </div>
+                    <div class="author"> By <span class="name">{{ author }}</span> {{ release }}</div>
+                    </div>
                 </div>
+
             </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="category"> {{ Titre }}</div>
-                <div class="heading"> {{ Description }}
-                    <div class="author"> By <span class="name">{{ author }}</span> {{ 2027 }}</div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="category"> {{ Titre }}</div>
-                <div class="heading"> {{ Description }}
-                    <div class="author"> By <span class="name">{{ author }}</span> {{ 2027 }}</div>
-                </div>
-            </div>
-        </div>
-    </main>
+        {% endfor %}
+        </main>
 </body>
 </html>
