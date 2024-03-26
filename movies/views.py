@@ -8,13 +8,14 @@ def show(request, fID):
 
     return render(request, "movies/show.html", {
         "titre": premierFilm.titre,
+        "image": premierFilm.image,
         "description": premierFilm.description,
         "autor": premierFilm.autor,
         "release": premierFilm.release,
         "nextId": int(fID) + 1,
     })
-
     
+
 
 def index(request) :
     listeTousFilms = models.Movies.objects.all()

@@ -11,18 +11,17 @@
 </head>
 <body>
     <main>
-        {% for i in premiersFilms %}
-            <div class="content-card">
+        <div class="content-card">
+            {% for i in premiersFilms %}
                 <div class="card">
-                    <div class="card-image"> <img class="card-image" src="{% static "movies/img/' + i.cover +'.jpg" %}" alt=""/></div>
+                    <div class="card-image"> <img class="card-image" src="{% static "movies/img/' + i.image +'.jpg" %}" alt=""/></div>
                     <div class="category"> {{ i.titre }} </div>
                     <div class="heading"> {{ description }} </div>
                     <div class="author"> By <span class="name">{{ author }}</span> {{ release }}</div>
-                    </div>
                 </div>
-
+            {% endfor %}
             </div>
-        {% endfor %}
-        </main>
+        </div>
+    </main>
 </body>
 </html>
